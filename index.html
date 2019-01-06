@@ -1,0 +1,197 @@
+<html>
+
+<head>
+    <title>Curse You!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        flexFont = function () {
+            var divs = document.getElementsByClassName("flexFont");
+            for (var i = 0; i < divs.length; i++) {
+                var relFontsize = divs[i].offsetWidth * 0.2;
+                divs[i].style.fontSize = relFontsize + 'px';
+            }
+        };
+
+        window.onload = function (event) {
+            flexFont();
+        };
+        window.onresize = function (event) {
+            flexFont();
+        };        
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sub-container red">
+            <div class="spacer">&nbsp;</div>
+            <div id="word1" class="flexFont">
+                TWAT
+            </div>    
+            <div class="spacer">&nbsp;</div>
+        </div>
+        <div class="sub-container blue">
+            <div class="spacer">&nbsp;</div>
+            <div id="word2" class="flexFont">
+                WAFFLE
+            </div>
+            <div class="spacer">&nbsp;</div>
+        </div>
+    </div>
+    <script>
+        /////////////////
+        // Word List One
+        //
+        var list1 = [
+            "ass",
+            "fuck",
+            "cock",
+            "tampon",
+            "shit",
+            "penis",
+            "juice",
+            "ball",
+            "jizz",
+            "cum",
+            "fanny",
+            "dick",
+            "bitch",
+            "douche",
+            "fart",
+            "nut",
+            "'gina",
+            "piss",
+            "whore",
+            "slut",
+            "mother",
+            "sissy",
+            "wench",
+            "crap",
+            "nipple",
+            "anus",
+            "retard",
+            "jerk",
+            "trash",
+            "tit",
+            "snot",
+            "scum",
+            "diaper",
+            "granny",
+            "pecker",
+            "cooch",
+            "twat",
+            "mouth",
+            "rectum",
+            "weiner",
+            "cunt",
+            "fetus",
+            "clit",
+            "ho",
+            "schlong",
+            "sack",
+            "meat",
+            "pussy",
+            "testicle",
+            "dildo",
+            "prick",
+            "scrotum",
+            "muff",
+            "panty",
+            "pube",
+            "sperm",
+            "poop",
+            "butt",
+            "pork",
+            "feces",
+            "beef",
+            "queef",
+            "clown"
+        ];
+
+        /////////////////
+        // Word List Two
+        //
+        var list2 = [
+            "chunk",
+            "bagger",
+            "flaps",
+            "licker",
+            "munch",
+            "rammer",
+            "sucker",
+            "waffle",
+            "eater",
+            "face",
+            "biter",
+            "bucket",
+            "monkey",
+            "dumpster",
+            "jacket",
+            "junkie",
+            "chomper",
+            "lips",
+            "fucker",
+            "blower",
+            "donkey",
+            "monster",
+            "wad",
+            "jockey",
+            "dangler",
+            "skank",
+            "pooper",
+            "farm",
+            "lover",
+            "shitter",
+            "hole",
+            "pincher",
+            "beater",
+            "sniffer",
+            "wipe",
+            "twister",
+            "slammer",
+            "folds",
+            "clot",
+            "glob",
+            "jammer",
+            "fondler",
+            "tickler",
+            "fungus",
+            "plug",
+            "packer",
+            "wrangler",
+            "slime",
+            "diddler",
+            "sandwich",
+            "gobbler",
+            "wanker",
+            "muncher",
+            "stain",
+            "boner",
+            "nugget",
+            "booger",
+            "rag",
+            "basket",
+            "burger",
+            "biscuit",
+            "bandit",
+            "gargler"
+        ]
+        
+        /////////////////    
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max));
+        }
+
+        function getRandomWord(list) {
+            return list[getRandomInt(list.length)];
+        }
+
+        /////////////////
+        document.getElementById("word1").innerText = getRandomWord(list1);
+        document.getElementById("word2").innerText = getRandomWord(list2);
+        
+    </script>
+</body>
+
+</html>
