@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script>
+        // Based on FlexText - Responsive font size based on container DIV size
+        // https://www.codeseek.co/aknip/flextext---responsive-font-size-based-on-container-div-size-GpGevp
         flexFont = function () {
             var divs = document.getElementsByClassName("flexFont");
             for (var i = 0; i < divs.length; i++) {
@@ -12,34 +14,7 @@
                 divs[i].style.fontSize = relFontsize + 'px';
             }
         };
-
-        window.onload = function (event) {
-            flexFont();
-        };
-        window.onresize = function (event) {
-            flexFont();
-        };        
-    </script>
-</head>
-
-<body>
-    <div class="container">
-        <div class="sub-container red">
-            <div class="spacer">&nbsp;</div>
-            <div id="word1" class="flexFont">
-                TWAT
-            </div>    
-            <div class="spacer">&nbsp;</div>
-        </div>
-        <div class="sub-container blue">
-            <div class="spacer">&nbsp;</div>
-            <div id="word2" class="flexFont">
-                WAFFLE
-            </div>
-            <div class="spacer">&nbsp;</div>
-        </div>
-    </div>
-    <script>
+ 
         /////////////////
         // Word List One
         //
@@ -179,19 +154,49 @@
         ]
         
         /////////////////    
-        function getRandomInt(max) {
-            return Math.floor(Math.random() * Math.floor(max));
-        }
-
         function getRandomWord(list) {
-            return list[getRandomInt(list.length)];
+            var index = Math.floor(Math.random() * Math.floor(list.length));
+            return list[index];
         }
 
-        /////////////////
-        document.getElementById("word1").innerText = getRandomWord(list1);
-        document.getElementById("word2").innerText = getRandomWord(list2);
+        function generateCurse() {
+            document.getElementById("word1").innerText = getRandomWord(list1);
+            document.getElementById("word2").innerText = getRandomWord(list2);
+        }
         
-    </script>
+        /////////////////
+        window.onload = function (event) {
+            flexFont();
+            generateCurse();
+        };
+
+        window.onresize = function (event) {
+            flexFont();
+        };
+        
+        window.onclick = function (event) {
+            generateCurse();
+        };
+    </script>    
+</head>
+
+<body>
+    <div class="container">
+        <div class="sub-container red">
+            <div class="spacer">&nbsp;</div>
+            <div id="word1" class="flexFont">
+                TWAT
+            </div>    
+            <div class="spacer">&nbsp;</div>
+        </div>
+        <div class="sub-container blue">
+            <div class="spacer">&nbsp;</div>
+            <div id="word2" class="flexFont">
+                WAFFLE
+            </div>
+            <div class="spacer">&nbsp;</div>
+        </div>
+    </div>
 </body>
 
 </html>
