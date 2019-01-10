@@ -18,7 +18,7 @@
         /////////////////
         // Word List One
         //
-        var list1 = [
+        var wordList1 = [
             "ass",
             "fuck",
             "cock",
@@ -87,7 +87,7 @@
         /////////////////
         // Word List Two
         //
-        var list2 = [
+        var wordList2 = [
             "chunk",
             "bagger",
             "flaps",
@@ -152,20 +152,42 @@
             "bandit",
             "gargler"
         ]
-        
-        /////////////////    
-        function getRandomWord(list) {
+
+        /////////////////
+        // Style List
+        //
+        var styleList = [
+            "white-on-red",
+            "white-on-blue",
+            "red-on-white",
+            "blue-on-white"          
+        ]
+
+        /////////////////
+        var card1, card2, word1, word2;
+
+        function getRandomListItem(list) {
             var index = Math.floor(Math.random() * Math.floor(list.length));
-            return list[index];
+            return list[index];            
         }
 
         function generateCurse() {
-            document.getElementById("word1").innerText = getRandomWord(list1);
-            document.getElementById("word2").innerText = getRandomWord(list2);
+            card1.classList.remove(card1.classList.item(1));
+            card1.classList.add(getRandomListItem(styleList));
+            word1.innerText = getRandomListItem(wordList1);
+
+            card2.classList.remove(card2.classList.item(1));
+            card2.classList.add(getRandomListItem(styleList));
+            word2.innerText = getRandomListItem(wordList2);
         }
         
         /////////////////
         window.onload = function (event) {
+            card1 = document.getElementById("card1");
+            card2 = document.getElementById("card2");
+            word1 = document.getElementById("word1");
+            word2 = document.getElementById("word2");
+
             flexFont();
             generateCurse();
         };
@@ -182,14 +204,14 @@
 
 <body>
     <div class="container">
-        <div class="sub-container red">
+        <div id="card1" class="sub-container red-on-white">
             <div class="spacer">&nbsp;</div>
             <div id="word1" class="flexFont">
                 TWAT
             </div>    
             <div class="spacer">&nbsp;</div>
         </div>
-        <div class="sub-container blue">
+        <div id="card2" class="sub-container white-on-blue">
             <div class="spacer">&nbsp;</div>
             <div id="word2" class="flexFont">
                 WAFFLE
